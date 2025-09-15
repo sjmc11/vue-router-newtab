@@ -8,21 +8,7 @@
  * @version 1.0.0
  */
 
-// Module augmentation to extend Vue Router's Router interface
-declare module 'vue-router' {
-  interface Router {
-    /** Enhanced push method with additional options 1 */
-    push(
-      to: import('vue-router').RouteLocationRaw,
-      options?: {
-        /** Force opening in new tab regardless of modifier key state */
-        forceNewTab?: boolean;
-        /** Open in new tab only if modifier key is pressed (false prevents new tab behavior) */
-        newTab?: boolean;
-      }
-    ): Promise<import('vue-router').NavigationFailure | void | undefined>;
-  }
-}
+// Module augmentation is handled in src/types.ts
 
 // Global fallback for any router implementation
 declare global {
