@@ -7,7 +7,7 @@
 
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { newTabRouter } from './dist/index.js'; // In real usage: 'vue-router-newtab'
+import { newTabRouter } from 'vue-router-newtab';
 
 // Define your routes with inline dummy components
 const routes = [

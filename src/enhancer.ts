@@ -3,7 +3,6 @@ import type {
   DebugLogger,
   EnhancedPushOptions,
   KeyboardState,
-  NewTabRouter,
   NewTabRouterConfig,
 } from './types';
 import {
@@ -136,9 +135,7 @@ class NewTabRouterClass {
    * Setup the router with new tab functionality
    */
   private setupNewTabRouter(): void {
-    const newTabRouter = this.router as NewTabRouter;
-
-    newTabRouter.push = (
+    this.router.push = (
       to: RouteLocationRaw,
       options?: EnhancedPushOptions
     ): Promise<NavigationFailure | void | undefined> => {
@@ -256,11 +253,11 @@ class NewTabRouterClass {
 export function newTabRouter(
   router: Router,
   config?: NewTabRouterConfig
-): NewTabRouter {
+): Router {
   if (isSSR()) {
     // eslint-disable-next-line no-console
     console.warn('[VueRouterNewTab] Enhancement skipped in SSR environment');
-    return router as NewTabRouter;
+    return router;
   }
 
   const newTabRouterInstance = new NewTabRouterClass(router, config);
@@ -269,7 +266,7 @@ export function newTabRouter(
   (router as unknown as Record<string, unknown>).__newTabRouter =
     newTabRouterInstance;
 
-  return router as NewTabRouter;
+  return router;
 }
 
 /**

@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly --outDir dist",
+    "build": "vite build && tsc --project tsconfig.build.json",
     "dev": "vite build --watch",
     "test": "vitest",
     "test:ui": "vitest --ui",
