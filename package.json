@@ -1,0 +1,71 @@
+{
+  "name": "vue-router-newtab",
+  "version": "1.0.0",
+  "description": "Cmd/Ctrl+click support for newTab router.push() navigation for Vue 3 + Vue Router 4",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly --outDir dist",
+    "dev": "vite build --watch",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "tscheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.{ts,js,json,md}\" \"tests/**/*.{ts,js,json}\" \"*.{js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js,json,md}\" \"tests/**/*.{ts,js,json}\" \"*.{js,json,md}\"",
+    "format-fix": "npm run format && npm run lint:fix && npm run tscheck",
+    "check-all": "npm run tscheck && npm run lint && npm run format:check && npm run test",
+    "fix-all": "npm run format-fix && npm run test",
+    "prepublishOnly": "npm run check-all && npm run build"
+  },
+  "keywords": [
+    "vue",
+    "vue-router",
+    "router",
+    "navigation",
+    "typescript",
+    "cmd-click",
+    "ctrl-click",
+    "new-tab"
+  ],
+  "author": "https://github.com/sjmc11",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.40.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
