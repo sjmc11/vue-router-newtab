@@ -9,6 +9,12 @@ import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import { newTabRouter } from 'vue-router-newtab';
 
+// If using unplugin-vue-router, import the type declarations:
+// import 'vue-router-newtab/unplugin-vue-router.d.ts';
+//
+// This ensures TypeScript recognizes the enhanced router.push() method
+// with additional options when using unplugin-vue-router's typed routing.
+
 // Define your routes with inline dummy components
 const routes = [
   {

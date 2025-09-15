@@ -10,10 +10,12 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./unplugin-vue-router.d.ts": "./unplugin-vue-router.d.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "unplugin-vue-router.d.ts"
   ],
   "scripts": {
     "build": "vite build && tsc --project tsconfig.build.json",
